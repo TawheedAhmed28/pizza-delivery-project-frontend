@@ -2,6 +2,7 @@ import React from 'react'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 import { baseUrl } from '../config'
+import { toast } from 'react-toastify'
 
 export default function SignIn() {
 
@@ -36,7 +37,9 @@ export default function SignIn() {
             navigate("/")
 
         } catch (error) {
-            console.log(error.response.data)
+
+            toast.error(error.response.data.detail)
+
         }
     }
 

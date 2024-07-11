@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import { baseUrl } from "../config"
-import { toast } from "react-toastify"
+import {  toast } from "react-toastify"
 
 export default function SignUp() {
 
@@ -29,20 +29,19 @@ export default function SignUp() {
     
         event.preventDefault()
         try {
+
             await axios.post(`${baseUrl}/auth/sign-up/`, formData)
             navigate(`${baseUrl}/auth/login`)
-        } catch (error) {
 
-            let message = ""
+        } catch (error) {
             
             const errorArray = Object.entries(error.response.data)
 
             errorArray.forEach(field => {
-                // message += `${field[0]}: ${field[1][0]}\n`
-                toast.error(`${field[0]}: ${field[1][0]}`)
-            })
 
-            // toast(message)
+                toast.error(`${field[0]}: ${field[1][0]}`, {})
+            
+            })
 
         }
 

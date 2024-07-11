@@ -6,29 +6,36 @@ import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
 
 import "./App.css"
-import { ToastContainer } from "react-toastify"
+import { ToastContainer, Flip } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 function App() {
 
-    React.useEffect(() => { }, [])
+    React.useEffect(() => {}, [])
+
+    const [isLoggedIn, setIsLoggedIn] = React.useState(!!localStorage.getItem('token'))
+    console.log(isLoggedIn)
 
     return <>
         <Router>
             <div className="bg-auto bg-[url('https://img.freepik.com/premium-vector/pizza-ingredients-background-linear-graphic-tomato-garlic-basil-olive-pepper-mushroom-leaf-seamless-pattern_84749-2057.jpg')] h-dvh w-dvw bg-repeat">
-                <NavBar />
+                <NavBar 
+                isLoggedIn={isLoggedIn}
+                setIsLoggedIn={setIsLoggedIn}
+                />
+
                 <ToastContainer
                     position="top-right"
-                    autoClose={5000}
+                    autoClose={3000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick
                     rtl={false}
                     pauseOnFocusLoss={false}
-                    pauseOnHover
+                    pauseOnHover={false}
                     draggable={false}
                     theme="dark"
-                    transition:Slide
+                    transition={Flip}
                 />
                 <Routes>
                     <Route path="/" element={<Home />} />
