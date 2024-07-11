@@ -4,6 +4,7 @@ import Home from "./components/Home"
 import NavBar from "./components/NavBar"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
+import AllPizzas from "./components/AllPizzas"
 
 import "./App.css"
 import { ToastContainer, Flip } from "react-toastify"
@@ -41,6 +42,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/auth/sign-in/" element={<SignIn />} />
                     <Route path="/auth/sign-up/" element={<SignUp />} />
+                    <Route path="/pizzas/" element={<AllPizzas />} />
                 </Routes>
             </div>
         </Router>

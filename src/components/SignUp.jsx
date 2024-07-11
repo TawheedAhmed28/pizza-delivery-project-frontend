@@ -113,7 +113,7 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
                 className='bg-gray-900 py-0.5 px-1 rounded'
             />
         </div>
-        <button>Sign up</button>
+        <button className='bg-[#19191a] px-3 py-1 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold'>Sign up</button>
 
     </form>
 
