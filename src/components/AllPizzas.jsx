@@ -31,9 +31,9 @@ export default function AllPizzas() {
 
                             const toppingNames = pizza.toppings.map(topping => topping.name)
 
-                            return <div key={index} className='bg-gray-900 rounded-xl flex-row flex items-center justify-between my-1 border border-gray-400 py-1'>
-                                <h1 className='px-4 pb-2 text-4xl'>Pizza: {toppingNames.join(", ")}</h1>
-                                <Link className='pr-4 pl-32 underline'>View Pizza</Link>
+                            return <div key={index} className='bg-gray-900 rounded-xl flex-row flex items-center justify-between my-1 border border-gray-400 py-1 pl-4 pr-6'>
+                                <h1 className='pb-2 pr-32 text-4xl'>{toppingNames.join(", ")}</h1>
+                                <Link className='underline' to={`/pizzas/${pizza.id}`}>View Pizza</Link>
                             </div>
                         })}
                     </div>

@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar"
 import SignIn from "./components/SignIn"
 import SignUp from "./components/SignUp"
 import AllPizzas from "./components/AllPizzas"
+import ShowPizza from "./components/ShowPizza"
 
 import "./App.css"
 import { ToastContainer, Flip } from "react-toastify"
@@ -43,6 +44,7 @@ function App() {
                     <Route path="/auth/sign-in/" element={<SignIn />} />
                     <Route path="/auth/sign-up/" element={<SignUp />} />
                     <Route path="/pizzas/" element={<AllPizzas />} />
+                    <Route path="/pizzas/:pizzaID" element={<ShowPizza />}/>
                 </Routes>
             </div>
         </Router>
