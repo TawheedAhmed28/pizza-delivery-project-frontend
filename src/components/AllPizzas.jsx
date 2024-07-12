@@ -25,7 +25,7 @@ export default function AllPizzas() {
                 <>
 
                     <h1 className='w-fit px-6 pb-3 bg-gray-900 bg-opacity-95 rounded-xl'>Pizzas</h1>
-                    <div className='flex flex-col items-left mt-[4%] h-[60%] w-fit max-h-fit bg-gray-700 bg-opacity-95 p-8 border-[3px] border-black rounded-xl'>
+                    <div className='flex flex-col items-left mt-[4%] min-h-[70%] w-fit max-h-fit bg-gray-700 bg-opacity-95 p-8 border-[3px] border-black rounded-xl'>
 
                         {pizzas.map((pizza, index) => {
 

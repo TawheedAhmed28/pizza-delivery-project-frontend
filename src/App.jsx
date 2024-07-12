@@ -11,6 +11,7 @@ import "./App.css"
 import { ToastContainer, Flip } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import NewPizza from "./components/NewPizza"
+import EditPizza from "./components/EditPizza"
 
 function App() {
 
@@ -18,6 +19,9 @@ function App() {
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('token'))
     console.log(!!isLoggedIn)
+  
+    const parts = isLoggedIn ? isLoggedIn.split('.') : null
+    const payload = parts ? JSON.parse(atob(parts[1])) : null
 
     return <>
         <Router>
@@ -48,7 +52,10 @@ function App() {
                     <Route path="/pizzas/new/" element={<NewPizza 
                         isLoggedIn={isLoggedIn}
                     />} />
-                    <Route path="/pizzas/:pizzaID" element={<ShowPizza />}/>
+                    <Route path="/pizzas/:pizzaID" element={<ShowPizza 
+                    isLoggedIn={isLoggedIn}
+                    />}/>
+                    <Route path="/pizzas/:pizzaID/edit" element={<EditPizza />} />
                 </Routes>
             </div>
         </Router>
