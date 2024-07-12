@@ -51,9 +51,9 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
 
     <h1 className='w-fit px-6 pb-3 bg-gray-900 bg-opacity-95 rounded-xl'>Sign up!</h1>
     
-    <form onSubmit={handleSubmit} className='flex flex-col justify-around min-h-[60%] translate-y-6 bg-gray-500 bg-opacity-95 border-2 px-4 py-8 rounded-xl items-center'>
+    <form onSubmit={handleSubmit} className='flex flex-col justify-around min-h-[60%] translate-y-6 bg-gray-500 bg-opacity-95 border-2 px-4 py-8 rounded-xl items-center w-fit'>
 
-        <div className='flex-row self-start w-fit'>
+        <div className='flex flex-row self-start justify-between w-full'>
             <label>Username: </label>
             <input 
                 type='text'
@@ -63,7 +63,7 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
                 className='bg-gray-900 py-0.5 px-1 rounded'
             />
         </div>
-        <div className='flex-row self-start w-fit'>
+        <div className='flex flex-row self-start w-full justify-between'>
             <label>Password: </label>
             <input 
                 type='password'
@@ -73,8 +73,8 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
                 className='bg-gray-900 py-0.5 px-1 rounded'
             />
         </div>
-        <div className='flex-row self-start w-fit'>
-            <label>Confirm password: </label>
+        <div className='flex flex-row self-start w-full justify-between'>
+            <label className="pr-2">Confirm password: </label>
             <input 
                 type='password'
                 name='password_confirmation'
@@ -83,7 +83,7 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
                 className='bg-gray-900 py-0.5 px-1 rounded'
             />
         </div>
-        <div className='flex-row self-start w-fit'>
+        <div className='flex flex-row self-start w-full justify-between'>
             <label>Email: </label>
             <input 
                 type='text'
@@ -93,7 +93,7 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
                 className='bg-gray-900 py-0.5 px-1 rounded'
             />
         </div>
-        <div className='flex-row self-start w-fit'>
+        <div className='flex flex-row self-start w-full justify-between'>
             <label>First name: </label>
             <input 
                 type='text'
@@ -103,7 +103,7 @@ return <div className="flex items-center w-dvw flex-col h-dvh">
                 className='bg-gray-900 py-0.5 px-1 rounded'
             />
         </div>
-        <div className='flex-row self-start min-w-fit'>
+        <div className='flex flex-row self-start w-full justify-between'>
             <label>Last name: </label>
             <input 
                 type='text'

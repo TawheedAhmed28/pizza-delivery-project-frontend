@@ -8,7 +8,7 @@ export default function NavBar({ isLoggedIn, setIsLoggedIn }) {
     const location = useLocation()
 
     React.useEffect(() => {
-        setIsLoggedIn(!!localStorage.getItem("token"))
+        setIsLoggedIn(localStorage.getItem("token"))
     }, [location])
 
     function logout() {

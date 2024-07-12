@@ -33,7 +33,11 @@ export default function AllPizzas() {
 
                             return <div key={index} className='bg-gray-900 rounded-xl flex-row flex items-center justify-between my-1 border border-gray-400 py-1 pl-4 pr-6'>
                                 <h1 className='pb-2 pr-32 text-4xl'>{toppingNames.join(", ")}</h1>
-                                <Link className='underline' to={`/pizzas/${pizza.id}`}>View Pizza</Link>
+                                {// ! - I'd like to have names for pizzas as the h1 here, right now the 
+                                // ! 'name' is just the list of toppings
+                                }
+                                
+                                <Link className='underline' to={`/pizzas/${pizza.id}/`}>View Pizza</Link>
                             </div>
                         })}
                     </div>
@@ -47,7 +51,7 @@ export default function AllPizzas() {
             )}
 
 
-            <button className='bg-[#19191a] px-3 py-1 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold' onClick={() => { console.log(pizzas) }}>Log</button>
+            <Link className='bg-[#19191a] px-6 py-2 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold text-white text-2xl' to={"/pizzas/new/"}>Add a pizza</Link>
 
         </div>
     )

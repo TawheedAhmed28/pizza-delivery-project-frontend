@@ -48,19 +48,19 @@ export default function SignIn() {
 
         <form onSubmit={handleSubmit} className='flex flex-col justify-around min-h-[30%] translate-y-6 bg-gray-500 bg-opacity-95 border-2 px-4 py-8 rounded-xl items-center'>
 
-            <div className='flex-row min-w-fit self-start'>
+            <div className='flex flex-row self-start w-full justify-between'>
                 <label>Email: </label>
                 <input
                     type='text'
                     name='email'
                     onChange={handleChange}
                     value={formData.email}
-                    className='min-w-60 bg-gray-900 py-0.5 px-1 rounded'
+                    className='bg-gray-900 py-0.5 px-1 rounded'
                 />
             </div>
 
-            <div className='flex-row self-start w-fit'>
-                <label>Password: </label>
+            <div className='flex flex-row self-start w-full justify-between'>
+                <label className='pr-2'>Password: </label>
                 <input 
                     type='password'
                     name='password'

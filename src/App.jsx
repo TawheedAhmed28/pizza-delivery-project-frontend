@@ -10,13 +10,14 @@ import ShowPizza from "./components/ShowPizza"
 import "./App.css"
 import { ToastContainer, Flip } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import NewPizza from "./components/NewPizza"
 
 function App() {
 
     React.useEffect(() => {}, [])
 
-    const [isLoggedIn, setIsLoggedIn] = React.useState(!!localStorage.getItem('token'))
-    console.log(isLoggedIn)
+    const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('token'))
+    console.log(!!isLoggedIn)
 
     return <>
         <Router>
@@ -44,6 +45,9 @@ function App() {
                     <Route path="/auth/sign-in/" element={<SignIn />} />
                     <Route path="/auth/sign-up/" element={<SignUp />} />
                     <Route path="/pizzas/" element={<AllPizzas />} />
+                    <Route path="/pizzas/new/" element={<NewPizza 
+                        isLoggedIn={isLoggedIn}
+                    />} />
                     <Route path="/pizzas/:pizzaID" element={<ShowPizza />}/>
                 </Routes>
             </div>
