@@ -12,6 +12,8 @@ import { ToastContainer, Flip } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import NewPizza from "./components/NewPizza"
 import EditPizza from "./components/EditPizza"
+import MyOrders from "./components/MyOrders"
+import NewOrder from "./components/NewOrder"
 
 function App() {
 
@@ -53,11 +55,17 @@ function App() {
                     <Route path="/pizzas/new/" element={<NewPizza 
                         isLoggedIn={isLoggedIn}
                     />} />
-                    <Route path="/pizzas/:pizzaID" element={<ShowPizza 
+                    <Route path="/pizzas/:pizzaID/" element={<ShowPizza 
                     isLoggedIn={isLoggedIn}
                     userID={userID}
                     />}/>
-                    <Route path="/pizzas/:pizzaID/edit" element={<EditPizza 
+                    <Route path="/pizzas/:pizzaID/edit/" element={<EditPizza 
+                    isLoggedIn={isLoggedIn}
+                    />} />
+                    <Route path="/orders/" element={<MyOrders 
+                    isLoggedIn={isLoggedIn}
+                    />} />
+                    <Route path="/orders/new/" element={<NewOrder 
                     isLoggedIn={isLoggedIn}
                     />} />
                 </Routes>

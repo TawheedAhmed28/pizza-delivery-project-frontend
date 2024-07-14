@@ -32,12 +32,12 @@ export default function AllPizzas() {
                             const toppingNames = pizza.toppings.map(topping => topping.name)
 
                             return <div key={index} className='bg-gray-900 rounded-xl flex-row flex items-center justify-between my-1 border border-gray-400 py-1 pl-4 pr-6'>
-                                <h1 className='pb-2 pr-32 text-4xl'>{toppingNames.join(", ")}</h1>
+                                <h1 className='text-[14px] pr-16 md:text-4xl md:pr-32 pb-1'>{toppingNames.join(", ")}</h1>
                                 {// ! - I'd like to have names for pizzas as the h1 here, right now the 
                                 // ! 'name' is just the list of toppings
                                 }
                                 
-                                <Link className='underline' to={`/pizzas/${pizza.id}/`}>View Pizza</Link>
+                                <Link className='underline text-[14px] md:text-xl' to={`/pizzas/${pizza.id}/`}>View Pizza</Link>
                             </div>
                         })}
                     </div>
