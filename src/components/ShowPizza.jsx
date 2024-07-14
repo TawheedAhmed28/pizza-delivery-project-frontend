@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { baseUrl } from '../config'
 import { toast } from 'react-toastify'
-export default function ShowPizza({ isLoggedIn }) {
+export default function ShowPizza({ isLoggedIn, userID }) {
 
     const navigate = useNavigate()
     const { pizzaID } = useParams()
@@ -67,8 +67,10 @@ export default function ShowPizza({ isLoggedIn }) {
                     <p className='text-xl'>Toppings: {pizza.toppings.map(topping => topping.name).join(", ")}</p>
                     
                     <button className='bg-[#19191a] px-3 py-1 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold mt-6 w-fit self-center'>Add to order</button>
-                    <button className='bg-[#19191a] px-3 py-1 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold mt-6 w-fit self-center' onClick={() => navigate(`/pizzas/${pizzaID}/edit`)}>Edit pizza (admins and creator only)</button>
-                    <button className='bg-red-900 px-3 py-1 rounded-lg border-2 border-red-300 text-red-300 hover:bg-red-300 hover:border-red-900 hover:text-red-900 hover:font-bold mt-6 w-fit self-center' onClick={deletePizza}>Delete pizza (admins only!)</button>
+                    {(userID === 1 || userID === pizza.owner.id) && <button className='bg-[#19191a] px-3 py-1 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold mt-6 w-fit self-center' onClick={() => navigate(`/pizzas/${pizzaID}/edit`)}>Edit pizza (admins and creator only)</button>}
+
+                    {userID === 1 && <button className='bg-red-900 px-3 py-1 rounded-lg border-2 border-red-300 text-red-300 hover:bg-red-300 hover:border-red-900 hover:text-red-900 hover:font-bold mt-6 w-fit self-center' onClick={deletePizza}>Delete pizza (admins only!)</button>}
+                
                 </div>
 
             ) : (

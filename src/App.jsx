@@ -18,10 +18,11 @@ function App() {
     React.useEffect(() => {}, [])
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('token'))
-    console.log(!!isLoggedIn)
+    // console.log(!!isLoggedIn)
   
     const parts = isLoggedIn ? isLoggedIn.split('.') : null
     const payload = parts ? JSON.parse(atob(parts[1])) : null
+    const userID = payload ? payload.sub : null
 
     return <>
         <Router>
@@ -54,8 +55,11 @@ function App() {
                     />} />
                     <Route path="/pizzas/:pizzaID" element={<ShowPizza 
                     isLoggedIn={isLoggedIn}
+                    userID={userID}
                     />}/>
-                    <Route path="/pizzas/:pizzaID/edit" element={<EditPizza />} />
+                    <Route path="/pizzas/:pizzaID/edit" element={<EditPizza 
+                    isLoggedIn={isLoggedIn}
+                    />} />
                 </Routes>
             </div>
         </Router>
