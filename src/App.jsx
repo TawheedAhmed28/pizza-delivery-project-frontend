@@ -14,6 +14,7 @@ import NewPizza from "./components/NewPizza"
 import EditPizza from "./components/EditPizza"
 import MyOrders from "./components/MyOrders"
 import NewOrder from "./components/NewOrder"
+import ShowOrder from "./components/ShowOrder"
 
 function App() {
 
@@ -68,6 +69,9 @@ function App() {
                     <Route path="/orders/new/" element={<NewOrder 
                     isLoggedIn={isLoggedIn}
                     />} />
+                    <Route path="/orders/:orderID" element={<ShowOrder 
+                    isLoggedIn={isLoggedIn}
+                    />}/>
                 </Routes>
             </div>
         </Router>

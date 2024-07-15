@@ -21,6 +21,8 @@ export default function NewOrder({ isLoggedIn }) {
 
     React.useEffect(() => {
 
+        !isLoggedIn && navigate('/auth/sign-in')
+
         async function getPizzas() {
 
             const pizzaData = await axios.get(`${baseUrl}/pizzas/`)

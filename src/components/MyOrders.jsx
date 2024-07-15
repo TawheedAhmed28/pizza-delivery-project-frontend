@@ -37,7 +37,7 @@ export default function MyOrders({ isLoggedIn }) {
 
         <h1 className='w-fit px-6 pb-3 bg-gray-900 bg-opacity-95 rounded-xl'>My orders</h1>
         
-        <div className='flex flex-col items-left mt-[4%] min-h-[70%] w-fit max-h-fit bg-gray-700 bg-opacity-95 p-8 border-[3px] border-black rounded-xl'>
+        <div className='flex flex-col items-left mt-[4%] min-h-[20%] min-w-[30%] w-fit max-h-fit bg-gray-700 bg-opacity-95 p-8 border-[3px] border-black rounded-xl'>
 
             {orders && orders.map((order, index) => {
                 return <div key={index} className='bg-gray-900 rounded-xl flex-row flex items-center justify-between my-1 border border-gray-400 py-1 pl-4 pr-6'>
@@ -47,10 +47,11 @@ export default function MyOrders({ isLoggedIn }) {
 
                 </div>
             })}
+            {!orders && <p>Looks like you haven't made any orders yet. Let's make one now with the button below!</p>}
 
         </div>
 
-        <Link className='bg-[#19191a] px-6 py-2 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold text-white text-2xl' to={"/orders/new/"}>Make an order</Link>
+        <Link className='bg-[#19191a] px-6 py-2 rounded-lg border-2 border-black hover:bg-[#b4b4b5] hover:border-black hover:text-black hover:font-bold text-white text-2xl mt-2' to={"/orders/new/"}>Make an order</Link>
     
     </div>
   )
