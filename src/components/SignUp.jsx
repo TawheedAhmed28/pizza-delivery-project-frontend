@@ -30,8 +30,8 @@ export default function SignUp() {
         event.preventDefault()
         try {
 
-            await axios.post(`${baseUrl}/auth/sign-up/`, formData)
-            navigate(`${baseUrl}/auth/login`)
+            await axios.post(`${baseUrl}/api/auth/sign-up/`, formData)
+            navigate(`${baseUrl}/api/auth/login`)
 
         } catch (error) {
             

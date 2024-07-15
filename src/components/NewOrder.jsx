@@ -25,7 +25,7 @@ export default function NewOrder({ isLoggedIn }) {
 
         async function getPizzas() {
 
-            const pizzaData = await axios.get(`${baseUrl}/pizzas/`)
+            const pizzaData = await axios.get(`${baseUrl}/api/pizzas/`)
             setPizzas(pizzaData.data)
 
         }
@@ -63,7 +63,7 @@ export default function NewOrder({ isLoggedIn }) {
 
         try {
 
-            await axios.post(`${baseUrl}/orders/`, newFormData, {
+            await axios.post(`${baseUrl}/api/orders/`, newFormData, {
                 headers: { Authorization: `Bearer ${isLoggedIn}` }
             })
 

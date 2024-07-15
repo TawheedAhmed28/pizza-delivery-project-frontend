@@ -10,7 +10,7 @@ export default function MyOrders({ isLoggedIn }) {
     React.useEffect(() => {
 
         async function fetchOrders() {
-            const allOrders = await axios.get(`${baseUrl}/orders/`, {
+            const allOrders = await axios.get(`${baseUrl}/api/orders/`, {
                 headers: {Authorization: `Bearer ${isLoggedIn}`}
             })
             setOrders(allOrders.data)

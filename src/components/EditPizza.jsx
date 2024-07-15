@@ -18,7 +18,7 @@ export default function EditPizza({ isLoggedIn }) {
 
         async function getPizza() {
 
-            const data = await axios.get(`${baseUrl}/pizzas/${pizzaID}/`)
+            const data = await axios.get(`${baseUrl}/api/pizzas/${pizzaID}/`)
             setPizza(data.data)
 
         }
@@ -46,7 +46,7 @@ export default function EditPizza({ isLoggedIn }) {
 
     async function getToppings() {
 
-        const { data } = await axios.get(`${baseUrl}/pizzas/toppings/`)
+        const { data } = await axios.get(`${baseUrl}/api/pizzas/toppings/`)
         setFormData({...formData, is_vegetarian: pizza.is_vegetarian, is_vegan: pizza.is_vegan})
 
         const toppings = data.map(topping => {
@@ -91,7 +91,7 @@ export default function EditPizza({ isLoggedIn }) {
             const newFormData = structuredClone(formData)
             newFormData.toppings = reformatToppings()
 
-            await axios.put(`${baseUrl}/pizzas/${pizzaID}/`, newFormData, {
+            await axios.put(`${baseUrl}/api/pizzas/${pizzaID}/`, newFormData, {
                 headers: { Authorization: `Bearer ${isLoggedIn}` }
             })
             navigate(`/pizzas/${pizzaID}`)

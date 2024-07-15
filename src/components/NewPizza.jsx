@@ -29,7 +29,7 @@ export default function NewPizza({ isLoggedIn }) {
 
     async function getToppings() {
         
-        const { data } = await axios.get(`${baseUrl}/pizzas/toppings/`)
+        const { data } = await axios.get(`${baseUrl}/api/pizzas/toppings/`)
         const toppings = data.map(topping => {
             return {
                 value: topping.id,
@@ -72,7 +72,7 @@ export default function NewPizza({ isLoggedIn }) {
             const newFormData = structuredClone(formData)
             newFormData.toppings = reformatToppings()
 
-            await axios.post(`${baseUrl}/pizzas/`, newFormData, {
+            await axios.post(`${baseUrl}/api/pizzas/`, newFormData, {
                 headers: { Authorization: `Bearer ${isLoggedIn}` }
             })
             navigate('/pizzas/')

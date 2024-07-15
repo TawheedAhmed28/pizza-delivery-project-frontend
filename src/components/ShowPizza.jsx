@@ -14,7 +14,7 @@ export default function ShowPizza({ isLoggedIn, userID }) {
 
         async function getPizza() {
 
-            const data = await axios.get(`${baseUrl}/pizzas/${pizzaID}/`)
+            const data = await axios.get(`${baseUrl}/api/pizzas/${pizzaID}/`)
             setPizza(data.data)
 
         }
@@ -26,7 +26,7 @@ export default function ShowPizza({ isLoggedIn, userID }) {
 
         try {
  
-            await axios.delete(`${baseUrl}/pizzas/${pizzaID}/`, {
+            await axios.delete(`${baseUrl}/api/pizzas/${pizzaID}/`, {
                 headers: { Authorization: `Bearer ${isLoggedIn}` }
             })
 

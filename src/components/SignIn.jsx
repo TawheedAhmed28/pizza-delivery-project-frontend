@@ -29,7 +29,7 @@ export default function SignIn() {
 
         try {
 
-            const { data } = await axios.post(`${baseUrl}/auth/sign-in/`, formData)
+            const { data } = await axios.post(`${baseUrl}/api/auth/sign-in/`, formData)
             const token = data.token
 
             console.log(data)

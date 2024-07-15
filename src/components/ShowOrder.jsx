@@ -12,7 +12,7 @@ export default function ShowOrder({ isLoggedIn }) {
 
         async function getOrder() {
 
-            const orderToGet = await axios.get(`${baseUrl}/orders/${orderID}/`, {
+            const orderToGet = await axios.get(`${baseUrl}/api/orders/${orderID}/`, {
                 headers: {Authorization: `Bearer ${isLoggedIn}`}
             })
             setOrder(orderToGet.data)

@@ -10,7 +10,7 @@ export default function AllPizzas() {
     React.useEffect(() => {
 
         async function fetchPizzas() {
-            const allPizzas = await axios.get(`${baseUrl}/pizzas/`)
+            const allPizzas = await axios.get(`${baseUrl}/api/pizzas/`)
             setPizzas(allPizzas.data)
         }
 
