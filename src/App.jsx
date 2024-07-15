@@ -21,7 +21,6 @@ function App() {
     React.useEffect(() => {}, [])
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(localStorage.getItem('token'))
-    // console.log(!!isLoggedIn)
   
     const parts = isLoggedIn ? isLoggedIn.split('.') : null
     const payload = parts ? JSON.parse(atob(parts[1])) : null

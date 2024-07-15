@@ -91,7 +91,7 @@ export default function NewPizza({ isLoggedIn }) {
 
     }
     
-    console.log(formData)
+    // console.log(formData)
 
     return (
         <div className='flex items-center w-dvw flex-col h-dvh'>

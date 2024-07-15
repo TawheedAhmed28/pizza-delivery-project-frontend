@@ -110,8 +110,6 @@ export default function EditPizza({ isLoggedIn }) {
 
     }
 
-    console.log(formData)
-
     return (
         <div className='flex items-center w-dvw flex-col h-dvh'>
 

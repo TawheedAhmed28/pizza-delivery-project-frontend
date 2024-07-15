@@ -32,7 +32,7 @@ export default function ShowOrder({ isLoggedIn }) {
 
     const timestamp = order ? (order.time_added.split(".")[0]).split("T") : order
 
-    console.log(timestamp)
+    // console.log(timestamp)
 
     return (
         <div className='flex items-center w-dvw flex-col h-dvh'>

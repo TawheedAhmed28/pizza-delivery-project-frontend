@@ -19,8 +19,6 @@ export default function MyOrders({ isLoggedIn }) {
         fetchOrders()
     }, [])
 
-    console.log(orders)
-
     function formatDate(date) {
 
         const datetime = date.split(".")[0]

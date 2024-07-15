@@ -21,7 +21,7 @@ export default function SignIn() {
 
     }
 
-    console.log(formData)
+    // console.log(formData)
 
     async function handleSubmit(event) {
 
@@ -32,7 +32,7 @@ export default function SignIn() {
             const { data } = await axios.post(`${baseUrl}/api/auth/sign-in/`, formData)
             const token = data.token
 
-            console.log(data)
+            // console.log(data)
             localStorage.setItem("token", token)
             navigate("/")
 
