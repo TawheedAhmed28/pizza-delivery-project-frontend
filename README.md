@@ -371,6 +371,14 @@ I'm also happy with how I further pushed myself with React and Tailwind CSS, eve
 
 ---
 
+### Wins
+
+**React Select** - this ended up being a necessity to get toppings on pizzas working as intended. I also had to create a topping model, and then had to make sure React Select wouldn't allow duplicate entries (e.g. a pepperoni and pepperoni pizza). A lot of steps, but I have a working topping selection that I'm proud of!
+
+**Time management** - though I had slightly longer to do this project (9 days as opposed to 7) it still felt like the workload was very heavy, and I found myself struggling at times. Regular breaks were absolutely key, and not having to stick to a set schedule (e.g. 9am-5pm) meant that I could take slightly longer breaks if I needed them and not feel guilty. Breaking this project down into a process of many small hurdles really helped me get through, and I think I'll do that for any future projects too.
+
+---
+
 ### Key learnings
 
 I loved learning a new programming language in Python, and it was also a nice confidence boost to learn it so quickly! Once you get a grasp of coding concepts in general, learning languages becomes more straightforward.
